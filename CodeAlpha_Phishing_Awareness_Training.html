@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        h1, h2 { color: #333; }
+        section { background-color: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .question { margin: 15px 0; }
+        button { margin: 5px; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #ddd; }
+        .result { color: green; font-weight: bold; display: none; }
+        .result.wrong { color: red; }
+        .explanation { font-style: italic; color: #555; display: none; }
+    </style>
+</head>
+<body>
+    <h1>Phishing Awareness Training</h1>
+
+    <section>
+        <h2>Introduction to Phishing</h2>
+        <p>Phishing is a type of cyber attack where malicious actors disguise themselves as trustworthy entities to deceive individuals into divulging sensitive information. This can include emails that look like they are from your bank, employer, or a known service, urging you to click on links, download attachments, or provide personal information.</p>
+        <p>Understanding phishing tactics can help you avoid falling victim to these attacks.</p>
+    </section>
+
+    <section>
+        <h2>Interactive Quiz</h2>
+
+        <div class="question">
+            <p><strong>Question 1:</strong> What is a common sign of a phishing email?</p>
+            <button onclick="checkAnswer('1a', true)">A. A sense of urgency</button>
+            <button onclick="checkAnswer('1a', false)">B. A friendly greeting</button>
+            <p id="result-1a" class="result">Correct! Phishing emails often create a sense of urgency to prompt immediate action.</p>
+            <p id="explanation-1a" class="explanation">Explanation: Phishing emails often use urgency or threats to rush you into making a mistake, such as revealing personal information or clicking on harmful links.</p>
+        </div>
+
+        <div class="question">
+            <p><strong>Question 2:</strong> What should you do if you suspect a phishing attempt?</p>
+            <button onclick="checkAnswer('2a', true)">A. Report it to your IT department</button>
+            <button onclick="checkAnswer('2a', false)">B. Ignore it</button>
+            <p id="result-2a" class="result">Correct! Reporting suspicious emails helps protect the organization and others from potential threats.</p>
+            <p id="explanation-2a" class="explanation">Explanation: Always report suspected phishing attempts to your IT department so they can take appropriate action to prevent any potential harm.</p>
+        </div>
+
+        <div class="question">
+            <p><strong>Question 3:</strong> Which of the following is a safe practice to avoid phishing?</p>
+            <button onclick="checkAnswer('3a', true)">A. Verifying links before clicking</button>
+            <button onclick="checkAnswer('3a', false)">B. Clicking on every link in emails</button>
+            <p id="result-3a" class="result">Correct! Verifying links before clicking is crucial for avoiding phishing attacks.</p>
+            <p id="explanation-3a" class="explanation">Explanation: Always hover over links to see the actual URL and verify its legitimacy before clicking. Avoid clicking on links in unsolicited emails.</p>
+        </div>
+
+        <div class="question">
+            <p><strong>Question 4:</strong> What is a common phishing tactic used in emails?</p>
+            <button onclick="checkAnswer('4a', true)">A. Impersonating a trusted organization</button>
+            <button onclick="checkAnswer('4a', false)">B. Using official logos only</button>
+            <p id="result-4a" class="result">Correct! Phishing emails often impersonate trusted organizations to deceive recipients.</p>
+            <p id="explanation-4a" class="explanation">Explanation: Phishers frequently impersonate trusted organizations or familiar contacts to make their emails seem more convincing.</p>
+        </div>
+
+        <div class="question">
+            <p><strong>Question 5:</strong> How can you verify the legitimacy of a suspicious email?</p>
+            <button onclick="checkAnswer('5a', true)">A. Contact the sender through a known channel</button>
+            <button onclick="checkAnswer('5a', false)">B. Reply directly to the email</button>
+            <p id="result-5a" class="result">Correct! Contacting the sender through a known and separate communication channel is a good practice.</p>
+            <p id="explanation-5a" class="explanation">Explanation: Instead of replying to a suspicious email, use a trusted contact method to verify its authenticity. This helps ensure you are not communicating with the attacker.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Best Practices for Staying Safe</h2>
+        <ul>
+            <li>Verify the sender’s email address and be cautious of unexpected communications.</li>
+            <li>Hover over links to see the actual URL before clicking and avoid clicking on suspicious links.</li>
+            <li>Do not download attachments or open links from unknown or unexpected sources.</li>
+            <li>Use multi-factor authentication (MFA) to add an extra layer of security to your accounts.</li>
+            <li>Regularly update your passwords and use strong, unique passwords for each account.</li>
+            <li>Keep your software and security systems up to date to protect against vulnerabilities.</li>
+        </ul>
+        <p>By following these practices, you can significantly reduce the risk of falling victim to phishing attacks and other online threats.</p>
+    </section>
+
+    <script>
+        function checkAnswer(id, isCorrect) {
+            const result = document.getElementById('result-' + id);
+            const explanation = document.getElementById('explanation-' + id);
+            result.style.display = 'block';
+            explanation.style.display = 'block';
+            if (!isCorrect) {
+                result.textContent = 'Incorrect! Please review the information and try again.';
+                result.classList.add('wrong');
+                explanation.textContent = 'Explanation: Phishing attempts are often disguised to look urgent or familiar, making it important to verify authenticity before taking any action.';
+            } else {
+                result.textContent = 'Correct! Good job.';
+                result.classList.remove('wrong');
+            }
+        }
+    </script>
+</body>
+</html>
